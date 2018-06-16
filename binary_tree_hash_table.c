@@ -242,29 +242,21 @@ void ht_insert(struct hash_table *ht, int key, struct TreeNode* tnode){
  * In separate chaining Hash table searching for a key will be in the
  * linked list at the hash value slot for that key.
  */
-int ht_search(struct hash_table *ht, int search_key, int search_data){
-	printf("Searching %d key and %d data in the hash table\n",
-			search_key, search_data);
+int ht_key_search(struct hash_table *ht, int search_key){
+	printf("Searching %d key in the hash table\n",search_key);
 
-	// Get the hash index of the list for the key
-	//int hash_index = hash_function(ht, search_key);
+	if(!ht->front)
+		return 0;
 
-	if(find_list(ht, search_key)){
-		struct list* keyList = get_list(ht, search_key);
-		struct ht_node* first = keyList->treeNode;
-
-		while(first->next != NULL){
-			if(first->value->data == search_data){
-				printf("TreeNode with %d exists.\n", search_data);
-				return true;
-			}
-			else{
-				return false;
-			}
+	struct list* current = ht->front;
+	while(current != NULL){
+		if(current->key == search_key){
+			return 1;
 		}
+		current = current->next;
 	}
 
-	return false;
+	return 0;
 
 }
 

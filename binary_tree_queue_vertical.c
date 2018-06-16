@@ -26,20 +26,20 @@ struct VQueue* createVQueue(){
 // Enqueue a TreeNode in the VQueue
 // QUEUE is a FIFO Data structure
 // EnQueue operation is always on the Rear
-void enVQueue(struct VQueue* q, struct TreeNode* treeNode, int hd){
+void enVQueue(struct VQueue* vq, struct TreeNode* treeNode, int hd){
 	struct VQnode* newNode = (struct VQnode*)malloc(sizeof(struct VQnode));
 	newNode->tnode = treeNode;
 	newNode->next = NULL;
 	newNode->hd = hd;
 
-	if((q->front == NULL)&&(q->rear == NULL)){
-		q->front = q->rear = newNode;
+	if((vq->front == NULL)&&(vq->rear == NULL)){
+		vq->front = vq->rear = newNode;
 	}
 	else{
 		/* Add this node at the end of the queue and also
 		 * update the rear, pointing to this node */
-		q->rear->next = newNode;
-		q->rear = newNode;
+		vq->rear->next = newNode;
+		vq->rear = newNode;
 	}
 
 	//printf("EnQueue %d (%d) in Tree Traversal VQueue\n", treeNode->data, q->rear->tnode->data);

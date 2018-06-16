@@ -27,4 +27,6 @@ int isVQueueEmpty(struct VQueue* q);
 int VqueueSize(struct VQueue* q);
 void printVQueue(struct VQueue* q);
 
+void MergeSort(struct list** headRef) ;
+
 #endif /* BINARY_TREE_QUEUE_VERTICAL_H_ */

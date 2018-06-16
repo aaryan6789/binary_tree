@@ -46,6 +46,11 @@ void verticalOrderTraversalI(struct TreeNode* root){
 			enVQueue(vq, tempTnode->right, hdist + 1);
 	}
 
+	struct list** listRef = &ht->front;
+	print_hash_table(ht);
+	MergeSort(listRef);
 	print_hash_table(ht);
 
 }
+
+

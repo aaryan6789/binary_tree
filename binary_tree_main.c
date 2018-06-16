@@ -137,5 +137,7 @@ int main() {
 
     verticalOrderTraversalI(R);
 
+    top_view(R);
+
     return 0;
 }

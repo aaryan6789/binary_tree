@@ -84,7 +84,7 @@ struct hash_table* create_ht();
 int find_list(struct hash_table* ht, int in_key);
 struct list* get_list(struct hash_table* ht, int in_key);
 void ht_insert(struct hash_table *ht, int key, struct TreeNode* tnode);
-
+int ht_key_search(struct hash_table *ht, int search_key);
 
 void print_hash_table(struct hash_table* ht);
 
@@ -121,6 +121,8 @@ void levelOrderTraversalLine2(struct TreeNode* root);
 void zigzagTraversalI(struct TreeNode* root);
 void verticalOrderTraversalR(struct TreeNode* root);
 void verticalOrderTraversalI(struct TreeNode* root);
+
+void top_view(struct TreeNode* root);
 
 void averageOfLevels(struct TreeNode* root);
 void averageOfLevels2(struct TreeNode* root);
